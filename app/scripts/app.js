@@ -9,7 +9,8 @@
             .state('landing', {
                 url: '/',
                 //why does upper url does not have landing? where below album and collection we add album and collection?
-                templateUrl:'/templates/landiing.html'
+                controller:'LandingCtrl as landing',
+                templateUrl:'/templates/landing.html'
          })
             .state('album', {
                 url: '/album',
@@ -17,6 +18,7 @@
          })
             .state('collection', {
                 url: '/collection',
+                controller: 'CollectionCtrl as collection',
                 templateUrl:'/templates/collection.html'
          });
      }
