@@ -7,13 +7,14 @@
          });
          $stateProvider
             .state('landing', {
-                url: '/',
+                url: '/landing',
                 //why does upper url does not have landing? where below album and collection we add album and collection?
                 controller:'LandingCtrl as landing',
                 templateUrl:'/templates/landing.html'
          })
             .state('album', {
                 url: '/album',
+                controller:'AlbumCtrl as album',
                 templateUrl:'/templates/album.html'
          })
             .state('collection', {
