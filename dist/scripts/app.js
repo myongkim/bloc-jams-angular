@@ -8,7 +8,7 @@
          $stateProvider
             .state('landing', {
                 url: '/',
-                //why does upper url does not have landing? where below album and collection we add album and collection?
+
                 controller:'LandingCtrl as landing',
                 templateUrl:'/templates/landing.html'
          })
@@ -23,7 +23,7 @@
                 templateUrl:'/templates/collection.html'
          });
      }
- 
+
      angular
          .module('blocJams', ['ui.router'])
          .config(config);
