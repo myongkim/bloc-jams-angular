@@ -1,9 +1,7 @@
 (function() {
      function SongPlayer($rootScope, Fixtures) {
 
-            var SongPlayer = {};
-
-
+        var SongPlayer = {};
 
          /**
          * @desc object holds the current song
@@ -16,9 +14,7 @@
          * @type {object}
          */
 
-
-
-                  /**
+         /**
          * @desc Buzz object audio file
          * @type {Object}
          */
@@ -28,7 +24,6 @@
            currentBuzzObject.stop();
            SongPlayer.currentSong.playing = null;
          }
-
 
          /**
          * @function setSong
@@ -98,22 +93,18 @@
     * @desc public method of SongPlyaer that checks if there is a current song playing
     * @param {object} song
     */
-
-         SongPlayer.play = function(song) {
-           song = song || SongPlayer.currentSong;
-           if (SongPlayer.currentSong !== song) {
-
-        setSong(song);
-        currentBuzzObject.play();
-        song.playing = true;
-
-       } else if (SongPlayer.currentSong === song) {
-          if (currentBuzzObject.isPaused()) {
-
-         currentBuzzObject.play();
-       }
-     }
-};
+    SongPlayer.play = function(song) {
+        song = song || SongPlayer.currentSong;
+        if (SongPlayer.currentSong !== song) {
+            setSong(song);
+            currentBuzzObject.play();
+            song.playing = true;
+        } else if (SongPlayer.currentSong === song) {
+            if (currentBuzzObject != null && currentBuzzObject.isPaused()) {
+                currentBuzzObject.play();
+            }
+        }
+    };
 
        /**
        * @function SongPlayer.pause
